@@ -7,3 +7,4 @@
  * To change this template use File | Settings | File Templates.
  */
 echo 'index general content';
+

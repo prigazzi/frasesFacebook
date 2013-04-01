@@ -12,7 +12,7 @@ define('DEFAULT_CONTROLLER', 'index');
 define('DEFAULT_LAYOUT', 'default');
 
 define('APP_NAME', 'Crucius');
-define('APP_SLOGAN', 'crucius, vender nunca fué tan fácil');
+define('APP_SLOGAN', 'crucius, cruciuslab');
 define('APP_COMPANY', 'www.crucius.com');
 
 define('DB_HOST', 'localhost');

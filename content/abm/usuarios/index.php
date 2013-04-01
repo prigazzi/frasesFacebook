@@ -7,4 +7,12 @@
  * To change this template use File | Settings | File Templates.
  */
 echo 'funcionalidad usuario';
+
+$usr = new Usuario();
+echo '<pre>';
+$resultadoIndex = $usr->buscar();
+print_r($resultadoIndex);
+echo '</pre>';
+
+
 ?>

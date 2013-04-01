@@ -8,12 +8,6 @@
     class Bootstrap{
         public static function run(Request $peticion){
 
-
-
-
-
-
-            //123123123123
             $carpeta = $peticion->getCarpeta();
             $funcionalidad = $peticion->getFuncionalidad();
             if ($carpeta != '' && $funcionalidad != '' ){
