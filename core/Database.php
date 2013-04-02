@@ -48,4 +48,17 @@ class Database extends PDO{
         return self::$PDOInstance->query($statement)->fetch(PDO::FETCH_ASSOC);
     }
 
+    /**
+     * Prepares a statement for execution and returns a statement object
+     *
+     * @param string $statement A valid SQL statement for the target database server
+     * @param array $driver_options Array of one or more key=>value pairs to set attribute values for the PDOStatement obj
+    returned
+     * @return PDOStatement
+     */
+    public function prepare ($statement, $driver_options=false) {
+        if(!$driver_options) $driver_options=array();
+        return self::$PDOInstance->prepare($statement, $driver_options);
+    }
+
 }

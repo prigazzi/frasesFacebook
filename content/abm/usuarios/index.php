@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
 echo 'funcionalidad usuario';
-
+//esta busqueda no va aca, es solo una prueba
 $usr = new Usuario();
 echo '<pre>';
 $resultadoIndex = $usr->buscar();
