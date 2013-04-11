@@ -1,5 +1,10 @@
-
 <?php
+    $usuario = new Usuario();
+    if ($usuario->esUsuario()){
+
+?>
+<?php
+
 /**
  * Created by Alan.
  * User: 4D
@@ -69,3 +74,8 @@ echo 'index general content';
 
 </body>
 </html>
+<?php
+    }else{
+        include_once 'login.php';
+    }
+?>
