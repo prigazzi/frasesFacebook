@@ -6,5 +6,7 @@
  */
 
 function lanzar(){
-    alert('Fui lanzadooo desde abm usuarioss!!!');
+    $.post('buscar', function(data) {
+        $('#contenido').append(data);
+    });
 }

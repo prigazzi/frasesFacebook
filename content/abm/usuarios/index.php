@@ -22,7 +22,9 @@
 
     <script>
         $(document).ready(function() {
-            lanzar();
+           $('#btnBuscar').click(function(){
+               lanzar()
+           });
             // Handler for .ready() called.
         });
     </script>
@@ -42,25 +44,15 @@
 
 <!-- CONTENIDO -->
 <div id="contenido">
+    <button class="btn" id="btnBuscar">Buscar</button>
     <?php
-    $usr = new Usuario();
-    echo '<pre>';
-    $resultadoIndex = $usr->buscar();
-    print_r($resultadoIndex);
 
-    echo '</pre>';
 ?>
 </div>
 <!-- FIN CONTENIDO -->
 
 
-<?php
 
-echo '<br>';
-
-echo '<br>';
-
-?>
 
 
 <?php

@@ -14,7 +14,9 @@ class Request {
     //-----------------------------atributos
     private $_carpeta;
     private $_funcionalidad;
+    private $_accion;
     private $_argumentos;
+
 
     //-------------------------------constructor
 
@@ -25,13 +27,17 @@ class Request {
             $url = array_filter($url);
             $this->_carpeta = strtolower(array_shift($url));
             $this->_funcionalidad = strtolower(array_shift($url));
+            $this->_accion = strtolower(array_shift($url));
             $this->_argumentos = $url;
         }
         if(!isset($this->_carpeta)){
             $this->_carpeta = '' ;
         }
         if (!isset($this->_funcionalidad)){
-            $this->_funcionalidad = 'index';
+            $this->_funcionalidad = '';
+        }
+        if ($this->_accion == ''){
+            $this->_accion = 'index';
         }
         if (!isset($this->_argumentos)){
             $this->_argumentos = array();
@@ -46,6 +52,9 @@ class Request {
     }
     public function getFuncionalidad(){
         return $this->_funcionalidad;
+    }
+    public function getAccion(){
+        return $this->_accion;
     }
     public function getArgs(){
         return $this->_argumentos;

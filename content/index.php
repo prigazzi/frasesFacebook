@@ -49,7 +49,7 @@
 
 <!-- CONTENIDO -->
 <div id="contenido">
-<?php echo $_POST['funcjs']; ?>
+
 </div>
 <!-- FIN CONTENIDO -->
 

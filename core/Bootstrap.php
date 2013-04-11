@@ -10,6 +10,7 @@
 
             $carpeta = $peticion->getCarpeta();
             $funcionalidad = $peticion->getFuncionalidad();
+            $accion = $peticion->getAccion();
             if ($carpeta != '' && $funcionalidad != '' ){
                 $rutaCarpeta = ROOT . DEFAULT_CONTENT . DS . $carpeta;
                 $rutaFuncionalidad = $rutaCarpeta . DS . $funcionalidad;
@@ -19,7 +20,7 @@
                 $rutaFuncionalidad = $rutaCarpeta;
                 $_POST['funcjs'] = DEFAULT_CONTENT;
             }
-            $funcionalidad = $rutaFuncionalidad . DS . DEFAULT_CONTROLLER . '.php';
+            $funcionalidad = $rutaFuncionalidad . DS . $accion . '.php';
 
             $args = $peticion->getArgs();
             if (is_readable($funcionalidad)){
