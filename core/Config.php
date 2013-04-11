@@ -7,9 +7,11 @@
  * To change this template use File | Settings | File Templates.
  */
 
-define('BASE_URL', 'http://localhost/cosas locas/');
+define('BASE_URL', 'http://localhost/frameWork/');
 define('DEFAULT_CONTROLLER', 'index');
 define('DEFAULT_LAYOUT', 'default');
+define('DEFAULT_CONTENT', 'content');
+
 
 define('APP_NAME', 'Crucius');
 define('APP_SLOGAN', 'crucius, cruciuslab');

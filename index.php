@@ -4,7 +4,6 @@
  * User: 4D
  * Date: 26/03/13
  * Time: 11:52
- * To change this template use File | Settings | File Templates.
  */
 
 define('DS', DIRECTORY_SEPARATOR);
