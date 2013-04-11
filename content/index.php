@@ -9,16 +9,13 @@
  */
 
 
-//echo $_GET['carpeta'];
-//echo'<br>';
-//echo $_GET['funcionalidad'];
 ?>
 
 <!--HEADER -->
 <!DOCTYPE html>
 <html>
 <head>
-<title><?php echo 'Título impreso'; ?></title>
+<title><?php echo 'Titulo impreso'; ?></title>
     <script src="<?php echo $_POST['funcjs'] ?>/js/main.js" type="text/javascript"></script>
     <link rel="stylesheet" href="<?php echo BASE_URL . 'css/' ?>main.css" type="text/css">
 <link rel="stylesheet" href="<?php echo BASE_URL . 'css/' ?>bootstrap-responsive.css" type="text/css">

@@ -15,7 +15,6 @@ require_once APP_PATH . 'Config.php';
 require_once APP_PATH . 'Request.php';
 require_once APP_PATH . 'Bootstrap.php';
 require_once APP_PATH . 'Database.php';
-require_once APP_PATH . 'Sesion.php';
 function __autoload($className){
     require_once APP_CLASS . $className . '.php';
 }
