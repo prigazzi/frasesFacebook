@@ -12,6 +12,9 @@ class usuario
     private $id;
     private $nombre;
     private $apellido;
+    private $dni;
+    private $_rol;
+
     private $user;
     private $pass;
 //----------------------------constructor
@@ -62,16 +65,16 @@ class usuario
         return $row;
     }
 
-    public function guardar(){
-
-    }
-
     public function esUsuario(){
         $sql = "SELECT * FROM usuarios WHERE id = :idUsuario";
         $db = new Database();
         $statement = $db->prepare($sql);
-        $statement->execute(array(':idUsuario' => 2));
+        $statement->execute(array(':idUsuario' => 23));
         $row = $statement->fetchObject();
+
+        if(!empty($row)){
+            $this->setNombre($row->nombre);
+        }
         return $row;
     }
 
