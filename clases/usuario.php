@@ -14,6 +14,7 @@ class usuario
     private $apellido;
     private $dni;
     private $_rol;
+    private $level;
 
     private $user;
     private $pass;
@@ -64,6 +65,7 @@ class usuario
         $row = $statement->fetchObject();
         return $row;
     }
+
 
     public function esUsuario(){
         $sql = "SELECT * FROM usuarios WHERE id = :idUsuario";
