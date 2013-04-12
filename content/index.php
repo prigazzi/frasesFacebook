@@ -1,10 +1,9 @@
 <?php
-    $usuario = new Usuario();
-    if ($usuario->esUsuario()){
+
+Session::acceso('usuario');
 
 ?>
 <?php
-
 /**
  * Created by Alan.
  * User: 4D
@@ -12,15 +11,13 @@
  * Time: 14:15
  * To change this template use File | Settings | File Templates.
  */
-
-
 ?>
 
 <!--HEADER -->
 <!DOCTYPE html>
 <html>
 <head>
-<title><?php echo 'Titulo impreso'; ?></title>
+<title><?php echo 'T&iacute;tulo impreso'; ?></title>
     <script src="<?php echo $_POST['funcjs'] ?>/js/main.js" type="text/javascript"></script>
     <link rel="stylesheet" href="<?php echo BASE_URL . 'css/' ?>main.css" type="text/css">
 <link rel="stylesheet" href="<?php echo BASE_URL . 'css/' ?>bootstrap-responsive.css" type="text/css">
@@ -37,7 +34,11 @@
 </script>
 </head>
 <body>
+<?php
 
+
+
+?>
 <div class="navbar  navbar-inverse">
     <div class="navbar-inner">
         <a class="brand" href="#">Crucius</a>
@@ -74,8 +75,3 @@ echo 'index general content';
 
 </body>
 </html>
-<?php
-    }else{
-        include_once 'login.php';
-    }
-?>
