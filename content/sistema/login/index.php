@@ -11,7 +11,8 @@
 <html>
 <head>
     <title><?php echo 'T&iacute;tulo impreso'; ?></title>
-    <script src="js/main.js" type="text/javascript"></script>
+    <script src="<?php echo BASE_URL . $_POST['funcjs'] ?>/js/main.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="<?php echo BASE_URL . $_POST['funcjs'] ?>self.css" type="text/css">
     <link rel="stylesheet" href="<?php echo BASE_URL . 'css/' ?>main.css" type="text/css">
     <link rel="stylesheet" href="<?php echo BASE_URL . 'css/' ?>bootstrap-responsive.css" type="text/css">
     <link rel="stylesheet" href="<?php echo BASE_URL . 'css/' ?>bootstrap.css" type="text/css">
@@ -28,9 +29,7 @@
 </head>
 <body>
 <div id="content">
-    <?php
-        include_once 'mostrar.php';
-    ?>
+
     <form class="navbar-form pull-left span4 offset4">
         <input type="text" class="span2" name="nombre">
         <br>
@@ -39,5 +38,13 @@
     </form>
     <button type="submit" class="btn" id="abrir">abrir</button>
     <button type="submit" class="btn" id="cerrar">cerrar</button>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <?php
+    include_once 'mostrar.php';
+    ?>
 </div>
 </body>
