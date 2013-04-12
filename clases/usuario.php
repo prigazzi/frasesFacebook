@@ -12,9 +12,6 @@ class usuario
     private $id;
     private $nombre;
     private $apellido;
-    private $dni;
-    private $_rol;
-    private $level;
 
     private $user;
     private $pass;
