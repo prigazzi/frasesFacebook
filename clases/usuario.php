@@ -6,8 +6,7 @@
  * Time: 20:52
  * To change this template use File | Settings | File Templates.
  */
-class usuario
-{
+class Usuario{
 //-----------------------------atributos
     private $id;
     private $nombre;
