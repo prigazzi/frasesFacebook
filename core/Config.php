@@ -13,9 +13,9 @@ define('DEFAULT_LAYOUT', 'default');
 define('DEFAULT_CONTENT', 'content');
 
 
-define('APP_NAME', 'Crucius');
-define('APP_SLOGAN', 'crucius, cruciuslab');
-define('APP_COMPANY', 'www.crucius.com');
+define('APP_NAME', 'nombreApp');
+define('APP_SLOGAN', 'slogan');
+define('APP_COMPANY', 'www.appNombre.com');
 define('SESSION_TIME', 10);
 
 define('DB_HOST', 'localhost');
