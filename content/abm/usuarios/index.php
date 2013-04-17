@@ -1,4 +1,7 @@
-<?php
+ <?php
+
+Session::acceso('usuario');
+
 /**
  * Created by Alan.
  * User: 4D

@@ -13,11 +13,13 @@ define('APP_CLASS', ROOT . 'clases' . DS);
 
 try{
 
+
     require_once APP_PATH . 'Config.php';
     require_once APP_PATH . 'Request.php';
     require_once APP_PATH . 'Bootstrap.php';
     require_once APP_PATH . 'Database.php';
     require_once APP_PATH . 'Session.php';
+
     function __autoload($className){
         require_once APP_CLASS . $className . '.php';
     }

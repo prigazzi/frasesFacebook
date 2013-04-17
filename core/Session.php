@@ -51,7 +51,7 @@ class Session
     //    Session::tiempo();
         
         if(Session::getLevel($level) > Session::getLevel(Session::get('level'))){
-            header('location:' . BASE_URL . 'error/access/5050');
+            header('location:' . BASE_URL . 'error');
             exit;
         }
     }
