@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="<?php echo BASE_URL . 'css/' ?>bootstrap-responsive.css" type="text/css">
     <link rel="stylesheet" href="<?php echo BASE_URL . 'css/' ?>bootstrap.css" type="text/css">
     <script src="<?php echo BASE_URL . 'js/' ?>JQuery1-9-1.js" type="text/javascript"></script>
-
+    <script src="<?php echo BASE_URL . 'js/' ?>angular.js" type="text/javascript"></script>
 
 
     <script>

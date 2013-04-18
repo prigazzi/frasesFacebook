@@ -12,7 +12,7 @@ Session::acceso('usuario');
 ?>
 
 <!DOCTYPE html>
-<html>
+<html ng-app>
 <head>
     <title><?php echo 'Titulo impreso'; ?></title>
     <script src="<?php echo BASE_URL . $_POST['funcjs'] ?>/js/main.js" type="text/javascript"></script>
@@ -20,7 +20,7 @@ Session::acceso('usuario');
     <link rel="stylesheet" href="<?php echo BASE_URL . 'css/' ?>bootstrap-responsive.css" type="text/css">
     <link rel="stylesheet" href="<?php echo BASE_URL . 'css/' ?>bootstrap.css" type="text/css">
     <script src="<?php echo BASE_URL . 'js/' ?>JQuery1-9-1.js" type="text/javascript"></script>
-
+    <script src="<?php echo BASE_URL . 'js/' ?>angular.js" type="text/javascript"></script>
 
 
     <script>
@@ -48,6 +48,11 @@ Session::acceso('usuario');
 <!-- CONTENIDO -->
 <div id="contenido">
     <button class="btn" id="btnBuscar">Buscar</button>
+
+    <label>Name:</label>
+    <input type="text" ng-model="yourName" placeholder="Enter a name here">
+    <hr>
+    <h1>Hello {{yourName}}!</h1>
     <?php
 
 ?>
