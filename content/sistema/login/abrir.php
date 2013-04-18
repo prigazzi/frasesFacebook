@@ -11,3 +11,4 @@ Session::set('level', 'usuario');
 
 Session::set('var1', 'var1');
 Session::set('var2', 'var2');
+Session::set('tiempo', time());

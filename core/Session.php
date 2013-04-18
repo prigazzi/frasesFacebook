@@ -48,7 +48,7 @@ class Session
             exit;
         }
         
-    //    Session::tiempo();
+        Session::tiempo();
         
         if(Session::getLevel($level) > Session::getLevel(Session::get('level'))){
             header('location:' . BASE_URL . 'error');
@@ -86,7 +86,7 @@ class Session
     public static function accesoEstricto(array $level, $noAdmin = false)
     {
         if(!Session::get('autenticado')){
-            header('location:' . BASE_URL . 'error/access/5050');
+            header('location:' . BASE_URL . 'error/default');
             exit;
         }
         
@@ -104,7 +104,7 @@ class Session
             }
         }
         
-        header('location:' . BASE_URL . 'error/access/5050');
+        header('location:' . BASE_URL . 'error/default');
     }
     
     public static function accesoViewEstricto(array $level, $noAdmin = false)
@@ -140,7 +140,7 @@ class Session
         
         if(time() - Session::get('tiempo') > (SESSION_TIME * 60)){
             Session::destroy();
-            header('location:' . BASE_URL . 'error/access/8080');
+            header('location:' . BASE_URL . 'error/default');
         }
         else{
             Session::set('tiempo', time());

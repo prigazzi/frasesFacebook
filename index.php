@@ -13,7 +13,6 @@ define('APP_CLASS', ROOT . 'clases' . DS);
 
 try{
 
-
     require_once APP_PATH . 'Config.php';
     require_once APP_PATH . 'Request.php';
     require_once APP_PATH . 'Bootstrap.php';
