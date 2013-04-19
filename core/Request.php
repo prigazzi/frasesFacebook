@@ -21,6 +21,7 @@ class Request {
     //-------------------------------constructor
 
     public function __construct(){
+
         if (isset($_GET['url'])){
             $url = filter_input(INPUT_GET, 'url', FILTER_SANITIZE_URL);
             $url = explode('/', $url);
@@ -30,6 +31,7 @@ class Request {
             $this->_accion = strtolower(array_shift($url));
             $this->_argumentos = $url;
         }
+
         if(!isset($this->_carpeta)){
             $this->_carpeta = '' ;
         }
@@ -37,7 +39,7 @@ class Request {
             $this->_funcionalidad = '';
         }
         if ($this->_accion == ''){
-            $this->_accion = 'index';
+            $this->_accion = 'index.php';
         }
         if (!isset($this->_argumentos)){
             $this->_argumentos = array();

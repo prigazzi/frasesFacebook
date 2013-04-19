@@ -24,6 +24,7 @@ try{
     }
 
     Session::init();
+
     $r = new Request();
     Bootstrap::run($r);
 }catch(Exception $e){

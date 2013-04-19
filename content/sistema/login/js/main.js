@@ -8,13 +8,23 @@
 function lanzar(){
     alert('fui lanzado desde login! ! !');
     $('#abrir').click(function(){
-        $.post('abrir', function(){
-            alert('sesion abierta');
+        var str = armarObjeto();
+        $.post('abrir.php', str ,function(data){
+            window.location = '../../index.php';
         });
     });
+
     $('#cerrar').click(function(){
         $.post('cerrar', function(){
            alert('sesion cerrada');
         });
     });
+}
+
+function armarObjeto(){
+    objeto =  {
+        usuario: $('#nombre').val(),
+        pass: $('#pass').val()
+    }
+    return objeto;
 }

@@ -11,15 +11,16 @@ class Usuario{
     private $id;
     private $nombre;
     private $apellido;
-
+    private $dni;
     private $user;
     private $pass;
+    private $fechaIngreso;
+    private $fechaEgreso;
+    private $rol;
+    private $funcion;
+    private $activo;
 //----------------------------constructor
-    public function __construct($nombre = -1, $apellido = -1, $user = -1, $pass = -1){
-        $this->nombre = $nombre;
-        $this->nombre = $apellido;
-        $this->nombre = $user;
-        $this->nombre = $pass;
+    public function __construct(){
     }
 
 //----------------------------metodos
@@ -39,6 +40,12 @@ class Usuario{
     public function setApellido($apellido){
         $this->apellido = $apellido;
     }
+    public function getDni(){
+        return $this->dni;
+    }
+    public function setDni($dni){
+        $this->apellido = $dni;
+    }
     public function getUser(){
         return $this->user;
     }
@@ -51,29 +58,62 @@ class Usuario{
     public function setPass($pass){
         $this->pass = $pass;
     }
+    public function getFechaIngreso(){
+        return $this->fechaIngreso;
+    }
+    public function setFechaIngreso($fechaIngreso){
+        $this->fechaIngreso = $fechaIngreso;
+    }
+    public function getFechaEgreso(){
+        return $this->fechaEgreso;
+    }
+    public function setFechaEgreso($fechaEgreso){
+        $this->fechaEgreso = $fechaEgreso;
+    }
+    public function getRol(){
+        return $this->rol;
+    }
+    public function setRol($rol){
+        $this->rol = $rol;
+    }
+    public function getFuncion(){
+        return $this->funcion;
+    }
+    public function setFuncion($funcion){
+        $this->funcion = $funcion;
+    }
+    public function getActivo(){
+        return $this->activo;
+    }
+    public function setActivo($activo){
+        $this->activo = $activo;
+    }
 
     public function buscar(){
         //prueba de busqueda con PDO
-        $sql = "SELECT * FROM usuarios WHERE id = :idUsuario";
+        $sql = "SELECT id, nombre, apellido, dni, usuario, pass, fecha_ingreso, fecha_egreso, rol, funcion FROM usuarios WHERE user = :user AND pass = :pass AND activo = TRUE";
         $db = new Database();
         $statement = $db->prepare($sql);
-        $statement->execute(array(':idUsuario' => 2));
+        $statement->execute(array(':user' => $this->user, 'pass' =>$this->pass));
         $row = $statement->fetchObject();
         return $row;
     }
 
 
     public function esUsuario(){
-        $sql = "SELECT * FROM usuarios WHERE id = :idUsuario";
+        $sql = "SELECT id, nombre, apellido, dni, usuario, pass, fecha_ingreso, fecha_egreso, rol, funcion FROM usuarios WHERE usuario = :user AND pass = :pass AND activo = TRUE";
         $db = new Database();
         $statement = $db->prepare($sql);
-        $statement->execute(array(':idUsuario' => 23));
+        $statement->execute(array(':user' => $this->user, 'pass' =>$this->pass));
         $row = $statement->fetchObject();
 
         if(!empty($row)){
             $this->setNombre($row->nombre);
+            return $row;
+        }else{
+            return 0;
         }
-        return $row;
+
     }
 
 

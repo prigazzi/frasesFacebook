@@ -12,7 +12,7 @@
 <head>
     <title><?php echo 'T&iacute;tulo impreso'; ?></title>
     <script src="<?php echo BASE_URL . $_POST['funcjs'] ?>/js/main.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="<?php echo BASE_URL . $_POST['funcjs'] ?>self.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo BASE_URL . $_POST['funcjs'] ?>/css/self.css" type="text/css">
     <link rel="stylesheet" href="<?php echo BASE_URL . 'css/' ?>main.css" type="text/css">
     <link rel="stylesheet" href="<?php echo BASE_URL . 'css/' ?>bootstrap-responsive.css" type="text/css">
     <link rel="stylesheet" href="<?php echo BASE_URL . 'css/' ?>bootstrap.css" type="text/css">
@@ -29,6 +29,13 @@
 </head>
 <body>
 <div id="content">
+
+    <form class="navbar-form pull-left span4 offset4">
+        <input type="text" class="span2" name="nombre" id="nombre">
+        <br>
+        <input type="text" class="span2" name="pass" id="pass">
+        <br>
+    </form>
     <button type="submit" class="btn" id="abrir">abrir</button>
     <button type="submit" class="btn" id="cerrar">cerrar</button>
 </div>
