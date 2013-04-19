@@ -29,22 +29,7 @@
 </head>
 <body>
 <div id="content">
-
-    <form class="navbar-form pull-left span4 offset4">
-        <input type="text" class="span2" name="nombre">
-        <br>
-        <input type="text" class="span2" name="pass">
-        <br>
-    </form>
     <button type="submit" class="btn" id="abrir">abrir</button>
     <button type="submit" class="btn" id="cerrar">cerrar</button>
-    <br>
-    <br>
-    <br>
-    <br>
-
-    <?php
-    include_once 'mostrar.php';
-    ?>
 </div>
 </body>
