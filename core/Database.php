@@ -61,4 +61,15 @@ class Database extends PDO{
         return self::$PDOInstance->prepare($statement, $driver_options);
     }
 
+    /**
+     * Quotes a string for use in a query
+     *
+     * @param string $input
+     * @param int $parameter_type
+     * @return string
+     */
+    public function quote ($input, $parameter_type=0) {
+        return self::$PDOInstance->quote($input, $parameter_type);
+    }
+
 }

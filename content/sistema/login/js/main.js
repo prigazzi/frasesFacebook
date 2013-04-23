@@ -10,12 +10,17 @@ function lanzar(){
     $('#abrir').click(function(){
         var str = armarObjeto();
         $.post('abrir.php', str ,function(data){
-            window.location = '../../index.php';
+            debugger;
+            if(data == 'error'){
+                alert('error en login');
+            }else{
+                window.location = '../../index.php';
+            }
         });
     });
 
     $('#cerrar').click(function(){
-        $.post('cerrar', function(){
+        $.post('cerrar.php', function(){
            alert('sesion cerrada');
         });
     });

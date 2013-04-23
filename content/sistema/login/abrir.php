@@ -18,16 +18,17 @@ try{
     $usuario->setPass($pass);
     $usrLog = $usuario->esUsuario();
 
-    if(count($usrLog) != 0){
+    if($usrLog != 'error'){
         Session::set('autenticado', true);
         Session::set('level', 'usuario');
 
         Session::set('var1', 'var1');
         Session::set('var2', 'var2');
         Session::set('tiempo', time());
-        header('location:' . BASE_URL);
+    }else{
+        throw new Exception('error');
     }
 
 }catch (Exception $e){
-
+    echo $e->getMessage();
 }

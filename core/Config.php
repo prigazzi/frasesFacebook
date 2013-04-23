@@ -12,11 +12,11 @@ define('DEFAULT_CONTROLLER', 'index');
 define('DEFAULT_LAYOUT', 'default');
 define('DEFAULT_CONTENT', 'content');
 
-
 define('APP_NAME', 'nombreApp');
 define('APP_SLOGAN', 'slogan');
 define('APP_COMPANY', 'www.appNombre.com');
 define('SESSION_TIME', 10);
+define ('HASH_KEY', '51769bd408eaa');
 
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');

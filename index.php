@@ -18,6 +18,8 @@ try{
     require_once APP_PATH . 'Bootstrap.php';
     require_once APP_PATH . 'Database.php';
     require_once APP_PATH . 'Session.php';
+    require_once APP_PATH . 'Hash.php';
+    require_once APP_PATH . 'Globals.php';
 
     function __autoload($className){
         require_once APP_CLASS . $className . '.php';
@@ -28,7 +30,7 @@ try{
     $r = new Request();
     Bootstrap::run($r);
 }catch(Exception $e){
-    echo $e->getMessage();
+    header('location:' . BASE_URL . 'error/default');
 }
 
 

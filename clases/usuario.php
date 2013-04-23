@@ -101,6 +101,7 @@ class Usuario{
 
 
     public function esUsuario(){
+        try{
         $sql = "SELECT id, nombre, apellido, dni, usuario, pass, fecha_ingreso, fecha_egreso, rol, funcion FROM usuarios WHERE usuario = :user AND pass = :pass AND activo = TRUE";
         $db = new Database();
         $statement = $db->prepare($sql);
@@ -111,7 +112,10 @@ class Usuario{
             $this->setNombre($row->nombre);
             return $row;
         }else{
-            return 0;
+            throw new Exception('error');
+        }
+        }catch (Exception $e){
+            return $e->getMessage();
         }
 
     }
