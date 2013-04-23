@@ -16,10 +16,6 @@ class Globals{
             $_POST[$clave] = stripslashes($_POST[$clave]);
             $_POST[$clave] = strip_tags($_POST[$clave]);
             $_POST[$clave] = (string) preg_replace('/[^A-Z0-9_.]/i', '', $_POST[$clave]);
-            if(!get_magic_quotes_gpc()){
-                $db = new Database();
-                $_POST[$clave] = $db->quote($_POST[$clave]);
-            }
             return trim($_POST[$clave]);
         }
     }
@@ -30,10 +26,6 @@ class Globals{
             $_GET[$clave] = stripslashes($_GET[$clave]);
             $_GET[$clave] = strip_tags($_GET[$clave]);
             $_GET[$clave] = (string) preg_replace('/[^A-Z0-9_.]/i', '', $_GET[$clave]);
-            if(!get_magic_quotes_gpc()){
-                $db = new Database();
-                $_GET[$clave] = $db->quote($_GET[$clave]);
-            }
             return trim($_GET[$clave]);
         }
     }

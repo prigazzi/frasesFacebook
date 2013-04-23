@@ -53,6 +53,7 @@ class Usuario{
         $this->user = $user;
     }
     public function getPass(){
+        $this->pass = Hash::getHash('sha1', $this->pass, HASH_KEY);
         return $this->pass;
     }
     public function setPass($pass){
@@ -105,7 +106,7 @@ class Usuario{
         $sql = "SELECT id, nombre, apellido, dni, usuario, pass, fecha_ingreso, fecha_egreso, rol, funcion FROM usuarios WHERE usuario = :user AND pass = :pass AND activo = TRUE";
         $db = new Database();
         $statement = $db->prepare($sql);
-        $statement->execute(array(':user' => $this->user, 'pass' =>$this->pass));
+        $statement->execute(array(':user' => $this->user, 'pass' => $this->getPass()));
         $row = $statement->fetchObject();
 
         if(!empty($row)){

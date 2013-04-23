@@ -6,8 +6,8 @@
  * Time: 3:11
  * To change this template use File | Settings | File Templates.
  */
-$user = $_POST['usuario'];
-$pass = $_POST['pass'];
+$user = Globals::post('usuario');
+$pass = Globals::post('pass');
 
 
 
