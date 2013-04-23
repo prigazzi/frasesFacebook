@@ -4,13 +4,9 @@
  * User: 4D
  * Date: 12/04/13
  * Time: 3:11
- * To change this template use File | Settings | File Templates.
  */
 $user = Globals::post('usuario');
 $pass = Globals::post('pass');
-
-
-
 
 try{
     $usuario = new Usuario();
@@ -20,10 +16,7 @@ try{
 
     if($usrLog != 'error'){
         Session::set('autenticado', true);
-        Session::set('level', 'usuario');
-
-        Session::set('var1', 'var1');
-        Session::set('var2', 'var2');
+        Session::set('level', $usrLog->rol);
         Session::set('tiempo', time());
     }else{
         throw new Exception('error');
