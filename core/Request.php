@@ -23,8 +23,7 @@ class Request {
     public function __construct(){
 
         if (isset($_GET['url'])){
-            $url = filter_input(INPUT_GET, 'url', FILTER_SANITIZE_URL);
-            $url = explode('/', $url);
+            $url = explode('/', $_GET['url']);//filtrar variable global no olvidar!!!
             $url = array_filter($url);
             $this->_carpeta = strtolower(array_shift($url));
             $this->_funcionalidad = strtolower(array_shift($url));
@@ -32,8 +31,9 @@ class Request {
             $this->_argumentos = $url;
         }
 
+
         if(!isset($this->_carpeta)){
-            $this->_carpeta = '' ;
+            $this->_carpeta = '';
         }
         if (!isset($this->_funcionalidad)){
             $this->_funcionalidad = '';
