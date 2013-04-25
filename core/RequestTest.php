@@ -18,11 +18,25 @@ class RequestTest extends PHPUnit_Framework_TestCase{
 
     public function tearDown(){ }
 
-    public function testGetCarpeta(){
-        $_GET['url'] = 'abm/';
+    /**
+     * @dataProvider urlsProvider
+     */
+    public function testGetCarpeta($url, $expectedUrl)
+    {
+        $_GET['url'] = $url;
         $request = new Request();
-        $this->assertEquals('abm', $request->getCarpeta());
+        $this->assertEquals($expectedUrl, $request->getCarpeta());
     }
+
+    public function urlsProvider()
+    {
+        return array(
+            array('abm/', 'abm'),
+            array('abm/usuarios/buscar', 'abm'),
+            array('pablo/es/un/capo', 'pablo'),
+        );
+    }
+
     public function testGetFuncionalidad(){
         $_GET['url'] = 'abm/usuarios/';
         $request = new Request();
