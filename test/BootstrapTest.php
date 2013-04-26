@@ -1,30 +1,32 @@
 <?php
-
+define('DS', DIRECTORY_SEPARATOR);
+define('ROOT', realpath(dirname(__FILE__)) . DS);
+require_once 'core/Config.php';
 require_once 'core/Bootstrap.php';
 require_once 'core/Request.php';
 
 
-class BootstrapTest{
+class BootstrapTest extends PHPUnit_Framework_TestCase{
     /**
      * @dataProvider urlsProvider
+     * @expectedException Exception
      */
-    public function urlsProvider()
-    {
-        return array(
-            array('abm/'),
-            array('abm/usuarios/buscar'),
-            array('moskito/puro/de/pollo'),
-        );
-    }
-    public function errorTest($url){
+    public function testRun($url){
         try{
             $_GET['url'] = $url;
             $request = new Request();
-            Bootstrap::run($request);
+            $this->assertFileExists(Bootstrap::run($request));
         }catch(Exeption $e){
-            return $this->assertEquals('no encontrado', $e->getMessage());
+            $this->assertEquals('no encontrado', $e->getMessage());
         }
     }
 
+    public function urlsProvider(){
+        return array(
+            array('abm'),
+            array('abm/usuarios'),
+            array('fafafa/rtd/sad'),
+        );
+    }
 
 }
