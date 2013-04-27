@@ -100,18 +100,12 @@ class Session
         header('location:' . BASE_URL . 'error/default');
     }
     
-    public static function accesoViewEstricto(array $level, $noAdmin = false)
+    public static function accesoViewEstricto(array $level)
     {
         if(!Session::get('autenticado')){
             return false;
         }
-        
-        if($noAdmin == false){
-            if(Session::get('level') == 'admin'){
-                return true;
-            }
-        }
-        
+
         if(count($level)){
             if(in_array(Session::get('level'), $level)){
                 return true;
