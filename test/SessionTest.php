@@ -59,4 +59,57 @@ class SessionTest extends PHPUnit_Framework_TestCase{
         $_SESSION['mono'] = 'chimpa';
         $this->assertEquals('chimpa', Session::get('mono'));
     }
+
+    /**
+     * @dataProvider levelProvider
+     */
+    public function testGetLevel($level, $numLevel){
+        try{
+            $this->assertEquals($numLevel, Session::getLevel($level));
+        }catch (Exception $e){
+            $this->assertEquals('Error de acceso', $e->getMessage());
+        }
+    }
+
+    public function levelProvider(){
+        return array(
+            array('admin', 3),
+            array('especial', 2),
+            array('usuario', 1),
+            array('cualquiera', 10),
+        );
+    }
+
+    public function testAcceso(){
+        Session::set('autenticado', true);
+        Session::set('level', 'usuario');
+
+        $this->assertTrue(Session::acceso('usuario'));
+
+    }
+
+
+    public function testAccesoView(){
+        Session::set('autenticado', true);
+        Session::set('level', 'usuario');
+
+        $this->assertTrue(Session::acceso('usuario'));
+    }
+
+    public function testAccesoEstricto(){
+        Session::set('autenticado', true);
+        Session::set('level', 'especial');
+
+        $this->assertTrue(Session::accesoEstricto(array('especial')));
+
+    }
+
+    public function testAccesoViewEstricto(){
+        Session::set('autenticado', true);
+        Session::set('level', 'especial');
+
+        $this->assertTrue(Session::accesoViewEstricto(array('especial')));
+
+    }
+
 }
