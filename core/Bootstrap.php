@@ -14,6 +14,7 @@
 
             if ($carpeta != '' && $funcionalidad != '' ){
                 $rutaCarpeta = ROOT . DEFAULT_CONTENT . DS . $carpeta;
+
                 $rutaFuncionalidad = $rutaCarpeta . DS . $funcionalidad;
 
                 $_POST['funcjs'] = DEFAULT_CONTENT . DS . $carpeta . DS . $funcionalidad;
@@ -37,6 +38,7 @@
             } else {
                 throw new Exception('no encontrado');
             }
+            return $funcionalidad;
         }
     }
 
