@@ -17,7 +17,6 @@ try{
     if($usrLog != 'error'){
         Session::set('autenticado', true);
         Session::set('level', $usrLog->rol);
-        Session::set('tiempo', time());
     }else{
         throw new Exception('error');
     }

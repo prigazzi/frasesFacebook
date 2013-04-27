@@ -28,6 +28,7 @@ try{
     Session::init();
 
     $r = new Request();
+
     Bootstrap::run($r);
 }catch(Exception $e){
     header('location:' . BASE_URL . 'error/default');

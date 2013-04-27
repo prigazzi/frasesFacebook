@@ -1,6 +1,6 @@
 <?php
 
-Session::acceso('usuario');
+//Session::acceso('usuario');
 
 ?>
 <?php

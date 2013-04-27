@@ -7,9 +7,6 @@
  * To change this template use File | Settings | File Templates.
  */
 class Globals{
-    public $clave;
-
-
 
     public static function post($clave){
         if(isset($_POST[$clave]) && !empty($_POST[$clave])){
@@ -19,7 +16,6 @@ class Globals{
             return trim($_POST[$clave]);
         }
     }
-
 
     public static function get($clave){
         if(isset($_GET[$clave]) && !empty($_GET[$clave])){
