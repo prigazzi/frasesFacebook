@@ -49,44 +49,24 @@ class Session
 
         if(!array_key_exists($level, $role)){
             throw new Exception('Error de acceso');
-        }
-        else{
+        }else{
             return $role[$level];
         }
     }
 
-    public static function tiempo()
-    {
-        if(!Session::get('tiempo') || !defined('SESSION_TIME')){
-            throw new Exception('No se ha definido el tiempo de sesion');
-        }
-
-        if(SESSION_TIME == 0){
-            return;
-        }
-
-        if(time() - Session::get('tiempo') > (SESSION_TIME * 60)){
-            Session::destroy();
-            header('location:' . BASE_URL . 'error/default');
-        }
-        else{
-            Session::set('tiempo', time());
-        }
-    }
-    
     public static function acceso($level)
+//esta funcion es medio cabeza hacer un tipo de excepcion que me redirija
     {
         if(!Session::get('autenticado')){
             header('location:' . BASE_URL . 'sistema/login/');
-            exit;
+            return false;
         }
-        
-        Session::tiempo();
-        
+
         if(Session::getLevel($level) > Session::getLevel(Session::get('level'))){
             header('location:' . BASE_URL . 'error');
-            exit;
+            return false;
         }
+        return true;
     }
     
     public static function accesoView($level)
@@ -104,24 +84,16 @@ class Session
     
 
     
-    public static function accesoEstricto(array $level, $noAdmin = false)
+    public static function accesoEstricto(array $level)
     {
         if(!Session::get('autenticado')){
             header('location:' . BASE_URL . 'error/default');
             exit;
         }
         
-        Session::tiempo();
-        
-        if($noAdmin == false){
-            if(Session::get('level') == 'admin'){
-                return;
-            }
-        }
-        
         if(count($level)){
             if(in_array(Session::get('level'), $level)){
-                return;
+                return true;
             }
         }
         
