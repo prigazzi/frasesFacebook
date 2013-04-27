@@ -40,6 +40,39 @@ class Session
         if(isset($_SESSION[$clave]))
             return $_SESSION[$clave];
     }
+
+    public static function getLevel($level)
+    {
+        $role['admin'] = 3;
+        $role['especial'] = 2;
+        $role['usuario'] = 1;
+
+        if(!array_key_exists($level, $role)){
+            throw new Exception('Error de acceso');
+        }
+        else{
+            return $role[$level];
+        }
+    }
+
+    public static function tiempo()
+    {
+        if(!Session::get('tiempo') || !defined('SESSION_TIME')){
+            throw new Exception('No se ha definido el tiempo de sesion');
+        }
+
+        if(SESSION_TIME == 0){
+            return;
+        }
+
+        if(time() - Session::get('tiempo') > (SESSION_TIME * 60)){
+            Session::destroy();
+            header('location:' . BASE_URL . 'error/default');
+        }
+        else{
+            Session::set('tiempo', time());
+        }
+    }
     
     public static function acceso($level)
     {
@@ -69,19 +102,7 @@ class Session
         return true;
     }
     
-    public static function getLevel($level)
-    {
-        $role['admin'] = 3;
-        $role['especial'] = 2;
-        $role['usuario'] = 1;
-        
-        if(!array_key_exists($level, $role)){
-            throw new Exception('Error de acceso');
-        }
-        else{
-            return $role[$level];
-        }
-    }
+
     
     public static function accesoEstricto(array $level, $noAdmin = false)
     {
@@ -128,24 +149,7 @@ class Session
         return false;
     }
     
-    public static function tiempo()
-    {
-        if(!Session::get('tiempo') || !defined('SESSION_TIME')){
-            throw new Exception('No se ha definido el tiempo de sesion'); 
-        }
-        
-        if(SESSION_TIME == 0){
-            return;
-        }
-        
-        if(time() - Session::get('tiempo') > (SESSION_TIME * 60)){
-            Session::destroy();
-            header('location:' . BASE_URL . 'error/default');
-        }
-        else{
-            Session::set('tiempo', time());
-        }
-    }
+
 }
 
 ?>
