@@ -6,8 +6,8 @@
  * Time: 0:49
  * To change this template use File | Settings | File Templates.
  */
-require_once 'core/Config.php';
-require_once 'core/Session.php';
+//require_once 'core/Config.php';
+//require_once 'core/Session.php';
 class SessionTest extends PHPUnit_Framework_TestCase{
     /**
      * @dataProvider sessionProvider

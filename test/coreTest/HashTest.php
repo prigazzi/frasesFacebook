@@ -6,8 +6,8 @@
  * Time: 20:16
  * To change this template use File | Settings | File Templates.
  */
-include_once 'core/Hash.php';
-include_once 'core/Config.php';
+//include_once 'core/Hash.php';
+//include_once 'core/Config.php';
 
 class HashTest extends PHPUnit_Framework_TestCase{
     /**

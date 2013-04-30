@@ -1,10 +1,10 @@
 <?php
 define('DS', DIRECTORY_SEPARATOR);
 define('ROOT', realpath(dirname(__FILE__)) . DS);
-require_once 'core/Config.php';
-require_once 'core/Bootstrap.php';
-require_once 'core/Request.php';
-
+/*require_once '../../core/Config.php';
+require_once '../../core/Bootstrap.php';
+require_once '../../core/Request.php';
+*/
 
 class BootstrapTest extends PHPUnit_Framework_TestCase{
     /**
@@ -15,7 +15,7 @@ class BootstrapTest extends PHPUnit_Framework_TestCase{
         try{
             $_GET['url'] = $url;
             $request = new Request();
-            $this->assertFileExists(Bootstrap::run($request));
+            $this->assertFileNotExists(Bootstrap::run($request));
         }catch(Exeption $e){
             $this->assertEquals('no encontrado', $e->getMessage());
         }

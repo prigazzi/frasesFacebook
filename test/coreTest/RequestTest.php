@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-require_once 'core/Request.php';
+//require_once 'core/Request.php';
 
 
 class RequestTest extends PHPUnit_Framework_TestCase{
