@@ -19,7 +19,7 @@ class Fill{
             if (!empty($props) && !empty($vals)) {
                 if (count($props) == count($vals)){
                     for ($i = 0; $i <= count($props); $i++){
-                        $props[$i] = 'set' . $props[$i] . '()'; // bose si esto funciona, de ultima hacer los campos public y a la gorra
+                        $props[$i] = 'set' . $props[$i] . '()'; // nose si esto funciona, de ultima hacer los campos public, toco los magic methods y a la gorra
                         $instancia->$props[$i] = $vals[$i];
                     }
                 }
