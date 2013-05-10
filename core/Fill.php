@@ -8,7 +8,7 @@
  */
 class Fill{
 
-    static function fillObject($nombreClase, $metodo, $where ='', $limit = '', $props = array(), $vals = array()){
+    static function queryObject($nombreClase, $metodo, $where ='', $limit = '', $props = array(), $vals = array()){
         try{
            if(file_exists($nombreClase)){
             $instancia = new $nombreClase();
