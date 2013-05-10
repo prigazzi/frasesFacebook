@@ -10,7 +10,8 @@ class Fill{
 
     static function queryObject($nombreClase, $metodo, $where ='', $limit = '', $props = array(), $vals = array()){
         try{
-           if(file_exists($nombreClase)){
+
+           if(file_exists(APP_CLASS . $nombreClase)){
             $instancia = new $nombreClase();
            }else{
                throw new Exception('la clase no existe');
@@ -18,7 +19,7 @@ class Fill{
             if (!empty($props) && !empty($vals)) {
                 if (count($props) == count($vals)){
                     for ($i = 0; $i <= count($props); $i++){
-                        $props[$i] = 'set' . $props[$i];
+                        $props[$i] = 'set' . $props[$i] . '()'; // bose si esto funciona, de ultima hacer los campos public y a la gorra
                         $instancia->$props[$i] = $vals[$i];
                     }
                 }
