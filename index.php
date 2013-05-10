@@ -20,6 +20,7 @@ try{
     require_once APP_PATH . 'Session.php';
     require_once APP_PATH . 'Hash.php';
     require_once APP_PATH . 'Globals.php';
+    require_once APP_PATH . 'Fill.php';
 
     function __autoload($className){
         require_once APP_CLASS . $className . '.php';
