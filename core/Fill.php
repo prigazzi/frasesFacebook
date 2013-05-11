@@ -11,7 +11,7 @@ class Fill{
     static function queryObject($nombreClase, $metodo, $where ='', $limit = '', $props = array(), $vals = array()){
         try{
 
-           if(file_exists(APP_CLASS . $nombreClase)){
+           if(file_exists(APP_CLASS . $nombreClase . '.php')){
             $instancia = new $nombreClase();
            }else{
                throw new Exception('la clase no existe');
